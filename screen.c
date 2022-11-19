@@ -14,6 +14,7 @@
 #include "path.h"
 #include "color.h"
 
+WINDOW *mainw;
 int winw,winh,mainww;
 int mainwsbw; /* width of status bar */
 

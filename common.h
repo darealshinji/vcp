@@ -23,14 +23,13 @@
 #define T_DIR  1 /*      -> DIR              */
 #define T_NED  2 /* DIR  -> NON-EXISTENT DIR */
 
-WINDOW *mainw;
-WINDOW *logw;
-
 struct dest_new {
 	char *opath;
 	char path[MAXPATHLEN+1];
 };
 extern struct dest_new dest;
+
+extern WINDOW *logw;
 
 extern unsigned long totalfiles;
 extern unsigned long curfile;

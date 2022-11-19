@@ -13,6 +13,8 @@
 #include "screen.h"
 #include "color.h"
 
+WINDOW *logw;
+
 int logaddi(int code, char *base, int var, int var2) {
 	
 	if(code == LOG_VRB && !vflag)

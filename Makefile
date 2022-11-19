@@ -1,13 +1,13 @@
 CC = cc
-CFLAGS += -Wall
+CFLAGS ?= -Wall -O2
 PREFIX ?= /usr/local
 OBJS = main.o copyall.o copy.o screen.o log.o path.o misc.o color.o
 
 all: $(OBJS)
-	$(CC) $(CFLAGS) -o vcp $(OBJS) -lcurses
+	$(CC) $(CFLAGS) -o vcp $(LDFLAGS) $(OBJS) -lcurses
 
 .c.o:
-	$(CC) $(CFLAGS) -c -I/usr/include/ -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 .SUFFIXS: .c .o
 
 install:
