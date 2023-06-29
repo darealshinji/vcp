@@ -36,4 +36,4 @@ install:
 installconf:
 	install -c -m 0644 vcp.conf.sample /etc/vcp.conf
 clean:
-	-rm $(OBJS) vcp
+	-rm -f $(OBJS) vcp

@@ -41,6 +41,8 @@ int setperm(char *src,struct stat *st) {
 	if(!pflag)
 		return 1;
 
+	memset(&tmp, 0, sizeof(struct stat));
+
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 	TIMESPEC_TO_TIMEVAL(&timea[0],&st->st_atimespec);
 	TIMESPEC_TO_TIMEVAL(&timea[1],&st->st_mtimespec);
@@ -340,7 +342,7 @@ int conf_read(int path) {
 			}
 		}
 		if(strncmp(buf,"flags=",6) == 0) {
-			for(x=6;x<strlen(buf);x++) {
+			for(x=6;x<(long)strlen(buf);x++) {
 				if(flag_setc(*(buf + x),1) == -1) {
 					printf("%s '%c'\n","Unknown config option:",*(buf + x));
 					close(file);

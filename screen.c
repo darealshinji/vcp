@@ -46,6 +46,7 @@ void scrn_draw() {
 	scrollok(logw, TRUE);
 	getmaxyx(mainw, dev_null, mainww);
 	mainwsbw = mainww - 2;
+	(void)dev_null;
 	
 	wmove(mainw,0,0);
 	wattron(mainw,A_BOLD);
